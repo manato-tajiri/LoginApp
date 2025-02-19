@@ -1,6 +1,5 @@
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 
 // 匿名クライアント（現状の実装）
 export async function createClient() {
@@ -27,13 +26,5 @@ export async function createClient() {
         },
       },
     }
-  )
-}
-
-// 管理者クライアント（Service Role Key を使用）
-export async function createAdminClient() {
-  return createSupabaseClient(
-    process.env.SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!, // ※ 管理者用のキーを使用
   )
 }

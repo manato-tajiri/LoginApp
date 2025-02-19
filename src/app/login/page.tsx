@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
 import { useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -94,12 +93,6 @@ export default function LoginForm() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <Label htmlFor="password">パスワード</Label>
-                <Link
-                  href="/login/forgotPassword"
-                  className="text-sm text-customBlue hover:underline"
-                >
-                  パスワードをお忘れですか?
-                </Link>
               </div>
               <div className="relative">
                 <Input
@@ -141,12 +134,6 @@ export default function LoginForm() {
             >
               {isLoading ? "ログイン中..." : "ログイン"}
             </Button>
-            <div className="text-center text-sm text-muted-foreground">
-              初めてご利用の場合は、{" "}
-              <Link href="/signup" className="text-customBlue hover:underline">
-                アカウントを作成してください
-              </Link>
-            </div>
           </form>
         </CardContent>
       </Card>
