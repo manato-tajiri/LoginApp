@@ -1,0 +1,11 @@
+services:
+  nextjs-app:
+    build:
+      context: .
+      dockerfile: dockerfile.dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - .:/app
